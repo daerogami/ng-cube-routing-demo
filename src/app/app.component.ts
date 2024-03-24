@@ -1,13 +1,22 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChildrenOutletContexts, RouterModule } from '@angular/router';
+import { cubeAnimation } from './animations';
+import { NavComponent } from "./nav/nav.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    animations: [cubeAnimation],
+    imports: [RouterModule, NavComponent]
 })
 export class AppComponent {
-  title = 'cube-demo';
+  constructor(private contexts: ChildrenOutletContexts) {}
+
+  getRouteAnimationData() {
+    return this.contexts.getContext('primary')?.route?.snapshot?.data?.[
+      'animation'
+    ];
+  }
 }

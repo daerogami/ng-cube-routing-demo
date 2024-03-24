@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "cube-demo": {
+    "ng-cube-routing-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -39,7 +39,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/cube-demo",
+            "outputPath": "dist/ng-cube-routing-demo",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -84,10 +84,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "cube-demo:build:production"
+              "buildTarget": "ng-cube-routing-demo:build:production"
             },
             "development": {
-              "buildTarget": "cube-demo:build:development"
+              "buildTarget": "ng-cube-routing-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -95,7 +95,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "cube-demo:build"
+            "buildTarget": "ng-cube-routing-demo:build"
           }
         },
         "test": {
